@@ -1,19 +1,22 @@
-#include <unistd.h>
+#include <stdio.h>
 #include "main.h"
-
 /**
- * main - Check description
- * Description: It prints the word Anything, followed by a new line.
- * Return: 0.
+ * main - a program that prints _putchar
+ *
+ * Return: Always 0 (success)
  */
+
 int main(void)
 {
-char word[9] = "Something";
-int i;
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 
-for (i = 0; i < 9; i++){
-_putchar(word[i]);
-_putchar('\n');
-}
-return (0);
 }
