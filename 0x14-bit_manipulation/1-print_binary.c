@@ -1,28 +1,30 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * print_binary - A function that prints a binary number without % or /
- * @n: The number to be printed
- * Return: Nothing
+ * print_binary - func that prints the binary equivalent of a decimal number
+ *
+ * @n: number to print in binary
  */
-void print_binary(unsigned long int n)
-{
-unsigned int flag = 0, max = 32768; /* 1000 0000 0000 0000 */
 
-if (n == 0)
+void print_binary(unsigned long int n)
+
 {
-_putchar('0');
-return;
-}
-while (max)
-{
-if (flag == 1 && (n & max) == 0)
-_putchar('0');
-else if ((n & max) != 0)
-{
-_putchar('1');
-flag = 1;
-}
-max >>= 1;
-}
+	int i, count = 0;
+	unsigned long int torrent;
+
+	for (i = 63; i >= 0; i--)
+	{
+		torrent = n >> i;
+
+		if (torrent & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+			_putchar('0');
+	}
+	if (!count)
+		_putchar('0');
 }
